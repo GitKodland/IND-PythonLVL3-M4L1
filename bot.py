@@ -21,7 +21,7 @@ async def start(ctx):
         await ctx.send("Kamu sudah terdaftar!")
     else:
         manager.add_user(user_id, ctx.author.name)
-        await ctx.send("""Hai! Selamat datang! Kamu telah berhasil terdaftar! Kamu akan menerima gambar baru setiap menit, dan kamu memiliki kesempatan untuk mendapatkannya! Untuk melakukannya, kamu perlu mengklik tombol 'Get!'! Hanya tiga pengguna pertama yang mengklik tombol 'Get!' yang akan mendapatkan gambarnya! =)""")
+        await ctx.send("""Hai! Selamat datang! Kamu telah berhasil terdaftar! Kamu akan menerima gambar baru setiap menit, dan kamu memiliki kesempatan untuk mendapatkannya! Untuk melakukannya, kamu perlu mengklik tombol 'Ambil!'! Hanya tiga pengguna pertama yang mengklik tombol 'Get!' yang akan mendapatkan gambarnya! =)""")
 
 # Tugas terjadwal untuk mengirim gambar
 @tasks.loop(minutes=1)
