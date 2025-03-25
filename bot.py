@@ -37,7 +37,7 @@ async def send_message():
 async def send_image(user, image_path, prize_id):
     with open(image_path, 'rb') as img:
         file = discord.File(img)
-        button = discord.ui.Button(label="Ambil!", custom_id=str(prize_id))
+        button = discord.ui.Button(label="Get!", custom_id=str(prize_id))
         view = discord.ui.View()
         view.add_item(button)
         await user.send(file=file, view=view)
