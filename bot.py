@@ -21,7 +21,7 @@ async def start(ctx):
         await ctx.send("Kamu sudah terdaftar!")
     else:
         manager.add_user(user_id, ctx.author.name)
-        await ctx.send("""Hai! Selamat datang! Kamu telah berhasil terdaftar! Kamu akan menerima gambar baru setiap menit, dan kamu memiliki kesempatan untuk mendapatkannya! Untuk melakukannya, kamu perlu mengklik tombol 'Ambil!'! Hanya tiga pengguna pertama yang mengklik tombol 'Get!' yang akan mendapatkan gambarnya! =)""")
+        await ctx.send("""Hai! Selamat datang! Kamu telah berhasil terdaftar! Kamu akan menerima gambar baru setiap menit, dan kamu memiliki kesempatan untuk mendapatkannya! Untuk melakukannya, kamu perlu mengklik tombol 'Ambil!'! Hanya tiga pengguna pertama yang mengklik tombol 'Ambil!' yang akan mendapatkan gambarnya! =)""")
 
 # Tugas terjadwal untuk mengirim gambar
 @tasks.loop(minutes=1)
@@ -37,7 +37,7 @@ async def send_message():
 async def send_image(user, image_path, prize_id):
     with open(image_path, 'rb') as img:
         file = discord.File(img)
-        button = discord.ui.Button(label="Get!", custom_id=str(prize_id))
+        button = discord.ui.Button(label="Ambil!", custom_id=str(prize_id))
         view = discord.ui.View()
         view.add_item(button)
         await user.send(file=file, view=view)
